@@ -94,40 +94,80 @@
                                         </div>
                                     </li>  
                                 </div>
-                                <div class="col link-bot-3">                                    
-                                    <img class="banner-bot-3 " :src="'src/assets/img/icon/' + BannerBot3" alt="">
-                                  
+                                <div class="col link-bot-3 d-flex flex-column gap-5 justify-content-center align-items-center">                                    
+                                    <img class="banner-bot-3 " :src="'src/assets/img/banner/' + BannerBot3" alt="">
+                                    <button class="button-detail">Detail</button>
                                 </div>
                             </div>
-                            
                         </ul>                        
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{nav6}}</a>
-                        <div class="dropdown-menu" aria-labelledby="dropdownId">
-                            <a class="dropdown-item" href="#">Action 1</a>
-                            <a class="dropdown-item" href="#">Action 2</a>
-                        </div>
+                        <ul class="dropdown-menu dropdown-menu-dark columns-6 mt-2" >
+                            <div class="row justify-content-center g-2">
+                                <div class="col">
+                                    <li><span class="dropdown-header small-nav">Basic bots</span></li>
+                                    <li class="d-flex" v-for="value in LinkEarn1">
+                                        <div class="dropdown-item d-flex">
+                                            <img :src="'/src/assets/img/icon/' + value.url" class="icon-nav" alt="" />        
+                                            <div class="p-2">
+                                                <a href="" class="content-nav">{{ value.content }}</a><br />
+                                                <span class="small-nav">{{ value.sub }}</span>
+                                            </div>
+                                        </div>
+                                    </li>    
+                                </div>
+                                <div class="col">
+                                    <li><span class="dropdown-header mt-4 "></span></li>
+                                    <li class="d-flex" v-for="value in LinkEarn2">
+                                        <div class="dropdown-item d-flex">
+                                            <img :src="'/src/assets/img/icon/' + value.url" class="icon-nav" alt="" />        
+                                            <div class="p-2">
+                                                <a href="" class="content-nav">{{ value.content }}</a><br />
+                                                <span class="small-nav">{{ value.sub }}</span>
+                                            </div>
+                                        </div>
+                                    </li>  
+                                </div>
+                                <div class="col link-bot-3">                                    
+                                    <li><span class="dropdown-header small-nav">Promotions</span></li>
+                                    <li class="d-flex" v-for="value in LinkEarn3">
+                                        <div class="dropdown-item d-flex">
+                                            <img :src="'/src/assets/img/icon/' + value.url" class="icon-nav" alt="" />        
+                                            <div class="p-2">
+                                                <a href="" class="content-nav">{{ value.content }}</a><br />
+                                                <span class="small-nav">{{ value.sub }}</span>
+                                            </div>
+                                        </div>
+                                    </li>                                  
+                                </div>
+                                <div class="col link-bot-3 d-flex flex-column gap-5 justify-content-center align-items-center">                                    
+                                    <img class="banner-bot-3 " :src="'src/assets/img/banner/' + BannerEarn4" alt="">
+                                    <button class="button-detail">Detail</button>
+                                </div>
+                            </div>
+                        </ul>    
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{nav7}}</a>
-                        <div class="dropdown-menu" aria-labelledby="dropdownId">
-                            <a class="dropdown-item" href="#">Action 1</a>
-                            <a class="dropdown-item" href="#">Action 2</a>
-                        </div>
+                    
+                </ul>
+            
+                <ul class="nav navbar-dark justify-content-beween  ">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#" aria-current="page">Login</a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{nav8}}</a>
-                        <div class="dropdown-menu" aria-labelledby="dropdownId">
-                            <a class="dropdown-item" href="#">Action 1</a>
-                            <a class="dropdown-item" href="#">Action 2</a>
-                        </div>
+                    <li class="nav-item">
+                        <button class="button-signUp">Sign Up</button>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" aria-current="page"><i class="bi bi-search"></i></a>                        
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" aria-current="page"><i class="bi bi-bell"></i></a>                        
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" aria-current="page"><i class="bi bi-layout-text-sidebar"></i></a>                        
                     </li>
                 </ul>
-                <form class="d-flex my-2 my-lg-0">
-                    <input class="form-control me-sm-2" type="text" placeholder="Search">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                </form>
             </div>
         </nav>
     </div>
@@ -143,9 +183,7 @@
             nav3:'Trade',
             nav4:'Copy',
             nav5:'Bots',
-            nav6:'Earn',
-            nav7:'Web3',
-            nav8:'KCGI',
+            nav6:'Earn',            
             logo:'logo-dark.svg.svg',
             
             LinkBuyCrypto : [
@@ -193,7 +231,31 @@
                 {content:'Futures CTA', sub:'Intelligent short-term futures trades in diverse markets', url:'future-cta-icon.png'},               
             ],
 
-            BannerBot3:'banner-bot-3.png'
+            LinkEarn1 : [
+                {content:'Overview', sub:'Comprehensive investment and financial management', url:'overview-icon.png'},
+                {content:'Savings', sub:'Earn daily profits with idle tokens', url:'saving-icon.png'},
+                {content:'Staking', sub:'Guaranteed earnings in both bear and bull markets', url:'stacking-icon.png'},
+                {content:'BGB Staking', sub:'Stake BGB for zero-fee withdrawals', url:'bgb-stacking-icon.png'},
+                {content:'Crypto Loans', sub:'Borrow crypto quickly and easily', url:'crypto-loans-icon.png'},                
+            ],
+
+            LinkEarn2 : [
+                {content:'Dual Investment', sub:'Buy low and sell high — profit no matter the market direction', url:'dual-invest-icon.png'},
+                {content:'Shark Fin', sub:'Principal-guaranteed high yields', url:'shark-fin-icon.png'},
+                {content:'Smart Trend', sub:'Time the market and enjoy incredible yields', url:'smart-trend-icon.png'}, 
+                {content:'Snowball', sub:'Principal-protected explosive earning potential', url:'snowball.png'}, 
+                {content:'Range Sniper', sub:'Profit from predicting price ranges', url:'range-sniper-icon.png'},              
+            ],
+
+            LinkEarn3 : [
+                {content:'Launchpad', sub:'Get ahead with hot and new tokens', url:'lauchpad-icon.png'},
+                {content:'Launchpool', sub:'Stake and mine hot and new tokens', url:'lauchpool-icon.png'},                
+                {content:'BGB Zone', sub:'All BGB rewards in one place', url:'bgb-zone-icon.png'}, 
+                {content:'Bitget wealth management', sub:'Grow your wealth with our top-tier asset management team.', url:'bitget-wealth-icon.png'},              
+            ],
+
+            BannerBot3:'banner-bot-3.png',
+            BannerEarn4:'banner-earn-4.png'
 
             
         }
@@ -204,6 +266,9 @@
 <style scoped>
     .navbar{
         height: 55px;
+    }
+    .nav-link{
+        color: var(--white);
     }
 
     .columns-1{
@@ -224,9 +289,32 @@
     .columns-5{
         width: 700px;
     }
+
+    .columns-6{
+        width: 1000px;
+    }
     .banner-bot-3{
         width: 180px;
         height: 126px;        
     }
+
+    .dropdown-menu{
+        background-color: var(--bg);
+    }
    
+    .button-detail{
+        width: 150px;
+        height: 40px;
+        border-radius: 10px;
+    }
+
+    .button-signUp{
+        border-radius: 20px;
+        padding: 8px 15px;
+    }
+
+    i{
+        font-size: 22px;
+        color: white;
+    }
 </style>
