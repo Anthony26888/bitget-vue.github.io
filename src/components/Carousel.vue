@@ -5,14 +5,9 @@
 </style>
 <template> 
   <div class="container mt-5 justify-content-center align-items-center">
-    <small class="text-light small-nav">Bitget / Markets / Overview</small>
-    <div class="d-flex justify-content-between">
-      <h1 class="flex-row text-light">Markets</h1>
-      <div class="d-flex ">
-        <img src="img/icon/ranking-white.a4ddce4.png.png" alt="" style="width: 28px; height: 28px;">
-        <h5 class="text-light flex-row-reverse">Rankings</h5>
-      </div>
-    </div>
+    <small class="text-light small-nav">Bitget / Markets / Overview</small>    
+    <h1 class="flex-row text-light">Markets</h1>     
+    
     <div id="carouselId" class="carousel slide m-5 " data-bs-ride="carousel">
       <ol class="carousel-indicators">
         <li data-bs-target="#carouselId" data-bs-slide-to="0" class="active" aria-current="true" aria-label="First slide"></li>

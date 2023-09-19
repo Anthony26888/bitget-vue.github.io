@@ -243,7 +243,7 @@
                 {content:'Dual Investment', sub:'Buy low and sell high — profit no matter the market direction', url:'dual-invest-icon.png'},
                 {content:'Shark Fin', sub:'Principal-guaranteed high yields', url:'shark-fin-icon.png'},
                 {content:'Smart Trend', sub:'Time the market and enjoy incredible yields', url:'smart-trend-icon.png'}, 
-                {content:'Snowball', sub:'Principal-protected explosive earning potential', url:'snowball.png'}, 
+                {content:'Snowball', sub:'Principal-protected explosive earning potential', url:'snow-icon.png'}, 
                 {content:'Range Sniper', sub:'Profit from predicting price ranges', url:'range-sniper-icon.png'},              
             ],
 
