@@ -1,5 +1,6 @@
 <script setup>
 import Navbar from './components/Navbar.vue'
+import Carousel from './components/Carousel.vue';
 </script>
 
 <template>
@@ -8,7 +9,7 @@ import Navbar from './components/Navbar.vue'
   </header>
 
   <main>
-    
+    <Carousel/>
   </main>
 </template>
 

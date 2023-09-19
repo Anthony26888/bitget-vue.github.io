@@ -2,7 +2,7 @@
 
 #app {
   max-width: 100%;
-
+  background-color: var(--bg);
 }
 
 img{

@@ -291,7 +291,7 @@
     }
 
     .columns-6{
-        width: 1000px;
+        width: 900px;
     }
     .banner-bot-3{
         width: 180px;
