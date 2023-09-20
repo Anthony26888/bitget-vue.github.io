@@ -1,4 +1,7 @@
 :root{
-    --bg : #1f1f1f;
+    --bgNav : #1f1f1f;
+    --bgMain : rgb(31 31 31);
     --white: #fff;
+    --green: rgb(1 188 141);
+    --red: rgb(241 73 63);
 }

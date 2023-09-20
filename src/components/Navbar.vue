@@ -299,7 +299,7 @@
     }
 
     .dropdown-menu{
-        background-color: var(--bg);
+        background-color: var(--bgNav);
     }
    
     .button-detail{

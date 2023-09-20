@@ -22,9 +22,10 @@
                 <div class="card-body ">
                   <div class="d-flex justify-content-between">
                     <strong class="card-title">{{ value.symbol.toUpperCase() }}/USDT</strong>
-                    <small class="card-text">{{ value.price_change_percentage_24h.toFixed(2) }} %</small>
+                    <small v-if="value.price_change_percentage_24h > 0" class="card-text buy">+ {{ value.price_change_percentage_24h.toFixed(2) }} %</small>
+                    <small v-else class="card-text sell">{{ value.price_change_percentage_24h.toFixed(2) }} %</small>
                   </div>
-                  <img class="container sparkline" src="https://quickchart.io/chart?c={type:'sparkline',data:{datasets:[{fill:false,borderWidth:5,borderColor:'red',data:[140,60,274,370,199]}]}}" />
+                  <img class="container sparkline" :src="`https://quickchart.io/chart?c={type:'sparkline',data:{datasets:[{fill:false,borderWidth:5,borderColor:'red', lineTension: 0.4,data:[` +value.sparkline_in_7d.price.slice(150,200) +']}]}}'" />
                   <div class="d-flex justify-content-between">
                     <img class="icon-coin" :src="value.image" alt="">
                     <strong class="card-text">$ {{ value.current_price.toLocaleString() }}</strong>
@@ -41,9 +42,10 @@
                 <div class="card-body ">
                   <div class="d-flex justify-content-between">
                     <strong class="card-title">{{ value.symbol.toUpperCase() }}/USDT</strong>
-                    <small class="card-text">{{ value.price_change_percentage_24h.toFixed(2) }} %</small>
+                    <small v-if="value.price_change_percentage_24h > 0" class="card-text buy">+ {{ value.price_change_percentage_24h.toFixed(2) }} %</small>
+                    <small v-else class="card-text sell">{{ value.price_change_percentage_24h.toFixed(2) }} %</small>
                   </div>
-                  <img class="container sparkline" src="https://quickchart.io/chart?c={type:'sparkline',data:{datasets:[{fill:false,borderWidth:5,borderColor:'red',data:[140,60,274,370,199]}]}}" />
+                  <img class="container sparkline" :src="`https://quickchart.io/chart?c={type:'sparkline',data:{datasets:[{fill:false,borderWidth:5,borderColor:'red', lineTension: 0.4,data:[` +value.sparkline_in_7d.price.slice(150,200) +']}]}}'" />
                   <div class="d-flex justify-content-between">
                     <img class="icon-coin" :src="value.image" alt="">
                     <strong class="card-text">$ {{ value.current_price.toLocaleString() }}</strong>
@@ -60,9 +62,10 @@
                 <div class="card-body ">
                   <div class="d-flex justify-content-between">
                     <strong class="card-title">{{ value.symbol.toUpperCase() }}/USDT</strong>
-                    <small class="card-text">{{ value.price_change_percentage_24h.toFixed(2) }} %</small>
+                    <small v-if="value.price_change_percentage_24h > 0" class="card-text buy">+ {{ value.price_change_percentage_24h.toFixed(2) }} %</small>
+                    <small v-else class="card-text sell">{{ value.price_change_percentage_24h.toFixed(2) }} %</small>
                   </div>
-                  <img class="container sparkline" src="https://quickchart.io/chart?c={type:'sparkline',data:{datasets:[{fill:false,borderWidth:5,borderColor:'red',data:[140,60,274,370,199]}]}}" />
+                  <img class="container sparkline" :src="`https://quickchart.io/chart?c={type:'sparkline',data:{datasets:[{fill:false,borderWidth:5,borderColor:'red', lineTension: 0.4,fill: true,data:[` +value.sparkline_in_7d.price.slice(150,200) +']}]}}'" />
                   <div class="d-flex justify-content-between">
                     <img class="icon-coin" :src="value.image" alt="">
                     <strong class="card-text">$ {{ value.current_price.toLocaleString() }}</strong>
@@ -87,14 +90,15 @@
   
 </template>
 <script>    
+ 
   import axios from 'axios';
-
-  export default {
+    export default {
+    
     data() {
-      return {
+      return {   
         carousel1: {},
         carousel2: {},
-        carousel3: {},
+        carousel3: {},  
       };
     },
     mounted() {
@@ -178,5 +182,16 @@
   .icon-coin{
     width: 32px;
     height: 32px;
+  }
+
+  .buy{
+    color:var(--green)
+  }
+  .sell{
+    color: var(--red);
+  }
+
+  .trend{
+    height: 200px;
   }
 </style>
