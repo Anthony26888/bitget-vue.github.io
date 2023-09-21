@@ -6,14 +6,9 @@
 <template> 
   <div class="container mt-5 justify-content-center align-items-center">
     <small class="text-light small-nav">Bitget / Markets / Overview</small>    
-    <h1 class="flex-row text-light">Markets</h1>     
+    <h1 class="flex-row text-light">Markets Overview</h1>     
     
-    <div id="carouselId" class="carousel slide m-5 " data-bs-ride="carousel">
-      <ol class="carousel-indicators">
-        <li data-bs-target="#carouselId" data-bs-slide-to="0" class="active" aria-current="true" aria-label="First slide"></li>
-        <li data-bs-target="#carouselId" data-bs-slide-to="1" aria-label="Second slide"></li>
-        <li data-bs-target="#carouselId" data-bs-slide-to="2" aria-label="Third slide"></li>
-      </ol>
+    <div id="carouselId" class="carousel slide m-5 " data-bs-ride="carousel">     
       <div class="carousel-inner " role="listbox">
         <div class="carousel-item active">
           <div class="row justify-content-center">
@@ -25,7 +20,8 @@
                     <small v-if="value.price_change_percentage_24h > 0" class="card-text buy">+ {{ value.price_change_percentage_24h.toFixed(2) }} %</small>
                     <small v-else class="card-text sell">{{ value.price_change_percentage_24h.toFixed(2) }} %</small>
                   </div>
-                  <img class="container sparkline" :src="`https://quickchart.io/chart?c={type:'sparkline',data:{datasets:[{fill:false,borderWidth:5,borderColor:'red', lineTension: 0.4,data:[` +value.sparkline_in_7d.price.slice(150,200) +']}]}}'" />
+                  <img class="container sparkline" v-if="value.price_change_percentage_24h > 0" :src="`https://quickchart.io/chart?c={type:'sparkline',data:{datasets:[{fill:false,borderWidth:5,borderColor:'rgb(1 188 141)', lineTension: 0.4,data:[` +value.sparkline_in_7d.price.slice(150,200) +']}]}}'" />
+                  <img class="container sparkline" v-else :src="`https://quickchart.io/chart?c={type:'sparkline',data:{datasets:[{fill:false,borderWidth:5,borderColor:'rgb(241 73 63)', lineTension: 0.4,data:[` +value.sparkline_in_7d.price.slice(150,200) +']}]}}'" />
                   <div class="d-flex justify-content-between">
                     <img class="icon-coin" :src="value.image" alt="">
                     <strong class="card-text">$ {{ value.current_price.toLocaleString() }}</strong>
@@ -45,7 +41,8 @@
                     <small v-if="value.price_change_percentage_24h > 0" class="card-text buy">+ {{ value.price_change_percentage_24h.toFixed(2) }} %</small>
                     <small v-else class="card-text sell">{{ value.price_change_percentage_24h.toFixed(2) }} %</small>
                   </div>
-                  <img class="container sparkline" :src="`https://quickchart.io/chart?c={type:'sparkline',data:{datasets:[{fill:false,borderWidth:5,borderColor:'red', lineTension: 0.4,data:[` +value.sparkline_in_7d.price.slice(150,200) +']}]}}'" />
+                  <img class="container sparkline" v-if="value.price_change_percentage_24h > 0" :src="`https://quickchart.io/chart?c={type:'sparkline',data:{datasets:[{fill:false,borderWidth:5,borderColor:'rgb(1 188 141)', lineTension: 0.4,data:[` +value.sparkline_in_7d.price.slice(150,200) +']}]}}'" />
+                  <img class="container sparkline" v-else :src="`https://quickchart.io/chart?c={type:'sparkline',data:{datasets:[{fill:false,borderWidth:5,borderColor:'rgb(241 73 63)', lineTension: 0.4,data:[` +value.sparkline_in_7d.price.slice(150,200) +']}]}}'" />
                   <div class="d-flex justify-content-between">
                     <img class="icon-coin" :src="value.image" alt="">
                     <strong class="card-text">$ {{ value.current_price.toLocaleString() }}</strong>
@@ -65,7 +62,8 @@
                     <small v-if="value.price_change_percentage_24h > 0" class="card-text buy">+ {{ value.price_change_percentage_24h.toFixed(2) }} %</small>
                     <small v-else class="card-text sell">{{ value.price_change_percentage_24h.toFixed(2) }} %</small>
                   </div>
-                  <img class="container sparkline" :src="`https://quickchart.io/chart?c={type:'sparkline',data:{datasets:[{fill:false,borderWidth:5,borderColor:'red', lineTension: 0.4,fill: true,data:[` +value.sparkline_in_7d.price.slice(150,200) +']}]}}'" />
+                  <img class="container sparkline" v-if="value.price_change_percentage_24h > 0" :src="`https://quickchart.io/chart?c={type:'sparkline',data:{datasets:[{fill:false,borderWidth:5,borderColor:'rgb(1 188 141)', lineTension: 0.4,data:[` +value.sparkline_in_7d.price.slice(150,200) +']}]}}'" />
+                  <img class="container sparkline" v-else :src="`https://quickchart.io/chart?c={type:'sparkline',data:{datasets:[{fill:false,borderWidth:5,borderColor:'rgb(241 73 63)', lineTension: 0.4,data:[` +value.sparkline_in_7d.price.slice(150,200) +']}]}}'" />
                   <div class="d-flex justify-content-between">
                     <img class="icon-coin" :src="value.image" alt="">
                     <strong class="card-text">$ {{ value.current_price.toLocaleString() }}</strong>
