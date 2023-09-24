@@ -14,7 +14,9 @@
     "bootstrap-vue": "^2.23.1",
     "chart.js": "^4.4.0",
     "vue": "^3.3.4",
-    "vue-chartjs": "^5.2.0"
+    "vue-chartjs": "^5.2.0",
+    "vue-good-table": "^2.21.11",
+    "vuejs-smart-table": "^0.0.8"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.3.4",

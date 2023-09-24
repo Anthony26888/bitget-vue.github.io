@@ -2,6 +2,7 @@
 import Navbar from './components/Navbar.vue'
 import Carousel from './components/Carousel.vue';
 import Ranking from './components/Ranking.vue';
+import Market from './components/Market.vue';
 
 </script>
 
@@ -13,6 +14,7 @@ import Ranking from './components/Ranking.vue';
   <main>
     <Carousel/>
     <Ranking/>
+    <Market/>
   </main>
 </template>
 

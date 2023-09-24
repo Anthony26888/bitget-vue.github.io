@@ -8,7 +8,7 @@
     <small class="text-light small-nav">Bitget / Markets / Overview</small>    
     <h1 class="flex-row text-light">Markets Overview</h1>     
     
-    <div id="carouselId" class="carousel slide m-5 " data-bs-ride="carousel">     
+    <div id="carouselId" class="carousel slide m-3 " data-bs-ride="carousel">     
       <div class="carousel-inner " role="listbox">
         <div class="carousel-item active">
           <div class="row justify-content-center">
@@ -145,16 +145,13 @@
             console.error('Error fetching data:', error);
           })
       },
-
-      
-      
     },
   };
 
 </script>
 <style scoped>
   .card{
-    width: 384px;
+    width: 400px;
     height: 216px;
     border:1px solid rgb(66 66 66);
     border-radius: 16px;
